@@ -1,0 +1,328 @@
+/*  ================================
+        global area start
+    ================================ */
+
+body {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    color: #1a1a1a;
+}
+
+a,
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+.main-div {
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*  ================================
+        global area end
+    ================================ */
+
+/*  ================================
+        header area start
+    ================================ */
+.logo {
+    background-color: #E4CB6B;
+}
+
+.logo img {
+    width: 400px;
+}
+
+.header-wraper {
+    margin: 20px 0 0;
+}
+
+/*  ================================
+        header area end
+    ================================ */
+
+/*  ================================
+        product title area start
+    ================================ */
+
+.pro-title {
+    background-color: #E4CB6B;
+    color: #000;
+    padding: 15px 50px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pro-title h2 {
+    font-size: 24px;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+/*  ================================
+        product title area end
+    ================================ */
+
+/*  ================================
+        product area start
+    ================================ */
+
+.des-title {
+    text-align: left;
+}
+
+.des-title > h2 {
+    font-size: 20px;
+    margin: 0;
+    text-transform: capitalize;
+    font-family: 'Raleway', sans-serif;
+}
+
+.product-wraper {
+    border: 1px solid #D1D1D1;
+    overflow: hidden;
+    padding: 40px 20px;
+}
+
+.product-dec h3 {
+    font-family: 'Raleway', sans-serif;
+    text-transform: capitalize;
+    font-size: 22px;
+    margin: 10px 0 10px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.product-dec h4 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #343434;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.product-dec p {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-dec ul {
+    margin-bottom: 15px;
+}
+
+.product-dec ul li {
+    list-style: none;
+    padding: 5px 20px;
+    position: relative;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.product-dec ul li::before {
+    position: absolute;
+    content: "\f00c";
+    font-family: fontawesome;
+    left: 0;
+    color: #E4CB6B;
+}
+
+/*  ================================
+        product area end
+    ================================ */
+
+/*  ================================
+        accordion area start
+    ================================ */
+.policy-area {
+    margin-top: 20px;
+}
+
+.tab input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.tab__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.35s;
+    border: 2px solid #eee;
+    padding: 2px 30px;
+    margin: 10px 0;
+}
+
+.tab input:checked ~ label {
+    color: #000;
+}
+
+.tab input:checked ~ .tab__content {
+    max-height: 5000px;
+}
+
+
+.accordion {
+    color: var(--theme);
+    overflow: hidden;
+}
+
+.tab__label,
+.tab__close {
+    display: block;
+    color: #3D3D3D;
+    background: var(--theme);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.tab__label {
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: #E4CB6B;
+    color: #000;
+    position: relative;
+    text-align: left !important;
+}
+
+.tab__label::after {
+    content: "\276F";
+    width: 1em;
+    text-align: center;
+    transform: rotate(90deg);
+    transition: all 0.35s;
+    right: 10px;
+    position: absolute;
+}
+
+.tab input:checked + .tab__label::after {
+    transform: rotate(270deg);
+}
+
+.tab__content h3 {
+    font-size: 18px;
+    color: #E4CB6B;
+    margin: 20px 0 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tab__content ul {
+    margin-bottom: 15px;
+}
+
+.tab__content ul li {
+    list-style: none;
+    padding: 3px 20px;
+    position: relative;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tab__close {
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+}
+
+.accordion--radio {
+    --theme: var(--secondary);
+}
+
+/* Arrow animation */
+.tab input:not(:checked) + .tab__label:hover::after {
+    animation: bounce .5s infinite;
+}
+
+@keyframes bounce {
+    25% {
+        transform: rotate(90deg) translate(.25rem);
+    }
+
+    75% {
+        transform: rotate(90deg) translate(-.25rem);
+    }
+}
+
+/*  ================================
+        accordion area end
+    ================================ */
+
+/***** medium Layout *****/
+
+@media (min-width: 992px) and (max-width: 1200px) {}
+
+/***** Tablet Layout *****/
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .product-dec {
+        margin-top: 50px;
+    }
+
+}
+
+/***** Mobile Layout *****/
+
+@media only screen and (max-width: 767px) {
+
+    body {
+        font-size: 13px;
+    }
+
+    .header-wraper {
+        margin: 20px 0 0;
+    }
+
+    .pro-title {
+        padding: 10px 20px;
+    }
+
+    .pro-title > h2 {
+        font-size: 18px;
+    }
+
+    .product-dec {
+        padding-top: 30px;
+    }
+
+    .product-dec h3,
+    .product-dec h4,
+    .single-care h3 {
+        font-size: 18px;
+    }
+
+    .product-wraper {
+        padding: 20px 0;
+    }
+
+    .tab__label,
+    .tab__close {
+        font-size: 12px;
+    }
+}
+
+/***** Wide Mobile Layout *****/
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
